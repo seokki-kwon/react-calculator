@@ -1,11 +1,11 @@
-import { useState } from 'react'
+import { useReducer, useState } from 'react'
 import Calculator from './components/calculator/Calculator';
 import StackViewer from './components/StackViewer';
 import DescriptionPanel from './components/DescriptionPanel';
 import './App.css'
+import calculatorReducer, { type CalculatorState } from './context/CalculatorReducer';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
        <main className="min-h-screen bg-slate-100 p-6">
@@ -21,7 +21,7 @@ function App() {
           </div>
 
           <div className="flex-1 rounded-2xl bg-white shadow-sm">
-            <DescriptionPanel />
+            <DescriptionPanel value={"설명"}/>
           </div>
         </section>
       </div>
